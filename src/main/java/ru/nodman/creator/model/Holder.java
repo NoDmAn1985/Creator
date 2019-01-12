@@ -127,6 +127,13 @@ public class Holder {
 //                                break;
 //                            }
                             cellOfRecords.add(new Cell(decimalNumber, TypeOfQuery.DOUBLE));
+                        case BOOLEAN:
+                            boolean booleanSign = resultSet.getBoolean(CellName);
+//                            if (resultSet.wasNull()) {
+//                                isLast = true;
+//                                break;
+//                            }
+                            cellOfRecords.add(new Cell(booleanSign, TypeOfQuery.BOOLEAN));
                             break;
                         case STRING:
                             String text = resultSet.getString(CellName);

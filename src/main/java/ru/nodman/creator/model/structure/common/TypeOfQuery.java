@@ -1,7 +1,7 @@
 package ru.nodman.creator.model.structure.common;
 
 public enum TypeOfQuery {
-    INT(1), DOUBLE(2), STRING(3);
+    INT(1), DOUBLE(2), STRING(3), BOOLEAN(4);
     private int type;
 
     TypeOfQuery(int type) {
@@ -14,6 +14,8 @@ public enum TypeOfQuery {
                 return INT;
             case 2:
                 return DOUBLE;
+            case 4:
+                return BOOLEAN;
             default:
                 return STRING;
         }

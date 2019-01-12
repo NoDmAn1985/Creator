@@ -130,11 +130,12 @@ class Linker {
         List<List<Cell>> records = holder.loadFromBaseVoid(queries.get("ПОСПпл"));
         for (List<Cell> cells : records) {
             int sqlCode = cells.get(0).getIntegerNumber();
-            int rang = cells.get(1).getIntegerNumber();
-            String name = cells.get(2).getText();
-            Chapter chapter = new Chapter(sqlCode, rang, name);
+            boolean isNumbered = cells.get(1).getBooleanSign();
+            int rang = cells.get(2).getIntegerNumber();
+            String name = cells.get(3).getText();
+            Chapter chapter = new Chapter(sqlCode, isNumbered, rang, name);
             text.put(sqlCode, chapter);
-            for (int i = 3; i < cells.size(); i = i + 2) {
+            for (int i = 4; i < cells.size(); i = i + 2) {
                 System.out.println(cells.get(i).getIntegerNumber());
                 Segment segment = segments.get(cells.get(i).getIntegerNumber());
                 chapter.addSegment(segment);

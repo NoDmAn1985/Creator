@@ -33,8 +33,6 @@ class SourceWorker {
                 break;
             }
 
-            System.out.println("цифра " + dataIndex);
-
             InitialData data = dataList.get(dataIndex - 1);
 
             System.out.println("выбран вариант = " + data.getChosenVariant());
